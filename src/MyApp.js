@@ -11,11 +11,20 @@ function MyApp() {
     });
     setCharacters(updated);
   }
+  function updateList(person) {
+    setCharacters([...characters, person]);
+  }
+
   return (
+
     <div className="container">
+      <Form handleSubmit={updateList} />
         <Table characterData={characters} 
           removeCharacter={removeOneCharacter} />
     </div>  
+    
   );
+
 }
+
 export default MyApp;
